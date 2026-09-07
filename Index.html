@@ -1593,7 +1593,7 @@
     //  ***ต้องแก้ค่านี้เป็น URL ของ Web App ที่ deploy จริงก่อนใช้งาน (Deploy > Manage
     //  deployments > คัดลอก URL ที่ลงท้ายด้วย /exec)***
     // =====================================================================================
-    const GAS_EXEC_URL = 'PASTE_YOUR_DEPLOYED_WEB_APP_URL_HERE'; // เช่น https://script.google.com/macros/s/XXXXXXXXXXXX/exec
+    const GAS_EXEC_URL = 'https://script.google.com/macros/s/AKfycbxtZds1EAOiSHr6C2XS41JcWXlRjJIFbww1iCGf9COwV1ZEBhmT_5IvUG3A-lY9AlEvrw/exec'; // เช่น https://script.google.com/macros/s/XXXXXXXXXXXX/exec
 
     function callGasApi_(fnName, args, onSuccess, onFailure) {
         if (!GAS_EXEC_URL || GAS_EXEC_URL.indexOf('PASTE_YOUR') === 0) {
