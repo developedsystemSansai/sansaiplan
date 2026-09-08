@@ -625,10 +625,6 @@
                     <div class="col-md-3">
                       <select class="form-select form-select-sm shadow-sm border-0" id="manage-filter-dept" onchange="renderManageTable()">
                         <option value="">ทุกฝ่าย/กลุ่มงาน</option>
-                        <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                        <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                        <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                        <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
                       </select>
                     </div>
                     <div class="col-md-4">
@@ -669,17 +665,19 @@
 
             <form id="form-project" onsubmit="handleProjectSubmit(event)">
               <div class="row g-4">
-                <div class="col-md-6">
-                  <label class="form-label fw-bold">ฝ่าย/กลุ่มงาน</label>
-                  <select class="form-select bg-light" name="department" id="add-department" required onchange="loadDeptBudgetAddProject()">
-                    <option value="" selected disabled>-- เลือกฝ่าย/กลุ่มงาน --</option>
-                    <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                    <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                    <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                    <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
+                <div class="col-md-4">
+                  <label class="form-label fw-bold">กลุ่มภารกิจ</label>
+                  <select class="form-select bg-light" id="add-mission" required>
+                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
                   </select>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
+                  <label class="form-label fw-bold">ฝ่าย/กลุ่มงาน</label>
+                  <select class="form-select bg-light" name="department" id="add-department" required onchange="loadDeptBudgetAddProject()">
+                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
                   <label class="form-label fw-bold">ปีงบประมาณ</label>
                   <select class="form-select bg-light" name="academic_year" id="add-academic-year" required onchange="loadDeptBudgetAddProject()"></select>
                 </div>
@@ -808,13 +806,15 @@
                         <select class="form-select bg-light" name="sub_year" id="sub_year" required onchange="loadProjectsForSubAct()"></select>
                       </div>
                       <div class="col-md-4">
+                        <label class="form-label fw-bold small text-muted">กลุ่มภารกิจ</label>
+                        <select class="form-select bg-light" id="sub_mission" required>
+                          <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
                         <label class="form-label fw-bold small text-muted">ฝ่าย/กลุ่มงาน</label>
                         <select class="form-select bg-light" name="sub_dept" id="sub_dept" required onchange="loadProjectsForSubAct()">
-                          <option value="" selected disabled>-- เลือกฝ่าย/กลุ่มงาน --</option>
-                          <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                          <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                          <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                          <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
+                          <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
                         </select>
                       </div>
                       <div class="col-md-4">
@@ -905,10 +905,6 @@
                        <div class="col-md-3">
                            <select class="form-select shadow-sm border-0" id="sa-filter-dept" onchange="filterSubActTable()">
                                <option value="">ทุกฝ่าย/กลุ่มงาน</option>
-                               <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                               <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                               <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                               <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
                            </select>
                        </div>
                        <div class="col-md-4">
@@ -980,13 +976,15 @@
                                 <select class="form-select bg-light" name="disb_year" id="disb_year" required onchange="loadProjectsForDisb()"></select>
                             </div>
                             <div class="col-md-6">
+                                <label class="form-label fw-bold small text-muted">กลุ่มภารกิจ</label>
+                                <select class="form-select bg-light" id="disb_mission" required>
+                                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
                                 <label class="form-label fw-bold small text-muted">ฝ่าย/กลุ่มงาน</label>
                                 <select class="form-select bg-light" name="disb_dept" id="disb_dept" required onchange="loadProjectsForDisb()">
-                                    <option value="" selected disabled>-- เลือกฝ่าย/กลุ่มงาน --</option>
-                                    <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                                    <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                                    <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                                    <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
+                                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -1053,10 +1051,6 @@
                        <div class="col-md-3">
                            <select class="form-select shadow-sm border-0" id="disb-filter-dept" onchange="filterDisbTable()">
                                <option value="">ทุกฝ่าย/กลุ่มงาน</option>
-                               <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                               <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                               <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                               <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
                            </select>
                        </div>
                        <div class="col-md-4">
@@ -1097,23 +1091,25 @@
 
             <form id="form-report" onsubmit="handleReportSubmit(event)">
                <div class="row g-4">
-                 <div class="col-md-4">
+                 <div class="col-md-3">
                    <label class="form-label fw-bold">ปีงบประมาณ</label>
                    <select class="form-select bg-light" name="rep_academic_year" id="rep-academic-year" required onchange="loadProjectNamesForReport()">
                      <option value="" disabled selected>-- เลือกปี --</option>
                    </select>
                  </div>
-                 <div class="col-md-4">
-                  <label class="form-label fw-bold">ฝ่าย/กลุ่มงาน</label>
-                  <select class="form-select bg-light" name="rep_department" id="rep-department" required onchange="loadProjectNamesForReport()">
-                    <option value="" selected disabled>-- เลือกฝ่าย/กลุ่มงาน --</option>
-                    <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                    <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                    <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                    <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
+                 <div class="col-md-3">
+                  <label class="form-label fw-bold">กลุ่มภารกิจ</label>
+                  <select class="form-select bg-light" id="rep-mission" required>
+                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
                   </select>
                  </div>
-                 <div class="col-md-4">
+                 <div class="col-md-3">
+                  <label class="form-label fw-bold">ฝ่าย/กลุ่มงาน</label>
+                  <select class="form-select bg-light" name="rep_department" id="rep-department" required onchange="loadProjectNamesForReport()">
+                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
+                  </select>
+                 </div>
+                 <div class="col-md-3">
                    <label class="form-label fw-bold">โครงการหลัก (เฉพาะที่อนุมัติแล้ว)</label>
                    <select class="form-select bg-light fw-bold text-primary" name="rep_project_name" id="rep_project_name_input" required disabled onchange="handleReportProjectChange()">
                         <option value="">-- เลือกโครงการ --</option>
@@ -1256,10 +1252,6 @@
                 <div class="col-md-3">
                     <select class="form-select border-0 shadow-sm" id="dl-filter-dept" onchange="filterDownloadTable()">
                         <option value="">ทุกฝ่าย/กลุ่มงาน</option>
-                        <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                        <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                        <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                        <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
                     </select>
                 </div>
                 <div class="col-md-3">
@@ -1346,10 +1338,6 @@
                     <div class="col-md-3">
                         <select class="form-select shadow-sm border-0" id="es-filter-dept" onchange="filterExpenseSummary()">
                             <option value="">ทุกฝ่าย/กลุ่มงาน</option>
-                            <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                            <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                            <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                            <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
                         </select>
                     </div>
                     <div class="col-md-3">
@@ -1396,10 +1384,6 @@
                         <label class="small fw-bold text-muted">ฝ่าย/กลุ่มงาน</label>
                         <select class="form-select border-0 shadow-sm" id="pr-filter-dept" onchange="filterPrintReportTable()">
                             <option value="">ทุกฝ่าย/กลุ่มงาน</option>
-                            <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                            <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                            <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                            <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -1497,16 +1481,19 @@
           <form id="form-edit-project" onsubmit="handleEditSubmit(event)">
               <input type="hidden" name="edit_timestamp" id="edit_timestamp">
               <div class="row g-3 bg-white p-3 rounded shadow-sm">
-                  <div class="col-md-6">
-                      <label class="form-label fw-bold small text-muted">ฝ่าย/กลุ่มงาน</label>
-                      <select class="form-select bg-light" name="edit_department" id="edit_department" required>
-                          <option value="กลุ่มพัฒนาคุณภาพและวิชาการ">กลุ่มพัฒนาคุณภาพและวิชาการ</option>
-                          <option value="ฝ่ายการเงินและงบประมาณ">ฝ่ายการเงินและงบประมาณ</option>
-                          <option value="ฝ่ายทรัพยากรบุคคล">ฝ่ายทรัพยากรบุคคล</option>
-                          <option value="ฝ่ายบริหารทั่วไป">ฝ่ายบริหารทั่วไป</option>
+                  <div class="col-md-4">
+                      <label class="form-label fw-bold small text-muted">กลุ่มภารกิจ</label>
+                      <select class="form-select bg-light" id="edit_mission" required>
+                          <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
                       </select>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
+                      <label class="form-label fw-bold small text-muted">ฝ่าย/กลุ่มงาน</label>
+                      <select class="form-select bg-light" name="edit_department" id="edit_department" required>
+                          <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
+                      </select>
+                  </div>
+                  <div class="col-md-4">
                       <label class="form-label fw-bold small text-muted">ปีงบประมาณ</label>
                       <select class="form-select bg-light" name="edit_academic_year" id="edit_academic_year" required></select>
                   </div>
@@ -1716,6 +1703,95 @@
                 el.value = systemYear;
             }
         });
+    }
+
+    // ===================== โครงสร้างองค์กร (กลุ่มภารกิจ -> ฝ่าย/กลุ่มงาน) - ระบบกรองอัตโนมัติ ==================
+    // ให้ผู้ใช้เลือก "กลุ่มภารกิจ" ก่อน แล้วตัวเลือก "ฝ่าย/กลุ่มงาน" จะถูกกรองอัตโนมัติให้เหลือ
+    // เฉพาะกลุ่มงานที่อยู่ในภารกิจนั้น ช่วยลดรายการยาว ๆ ที่ต้องไล่หา และลดขั้นตอนการกรอกข้อมูล
+    let ORG_STRUCTURE = { missions: [], structure: {}, departments: [] };
+
+    function setupOrgStructure(org) {
+        if (!org || !org.missions) return;
+        ORG_STRUCTURE = org;
+
+        // คู่ select แบบ cascade (กลุ่มภารกิจ -> ฝ่าย/กลุ่มงาน) ในฟอร์มกรอกข้อมูล
+        setupMissionDeptCascade('add-mission', 'add-department');
+        setupMissionDeptCascade('rep-mission', 'rep-department');
+        setupMissionDeptCascade('edit_mission', 'edit_department');
+        setupMissionDeptCascade('sub_mission', 'sub_dept');
+        setupMissionDeptCascade('disb_mission', 'disb_dept');
+
+        // select แบบกรองตารางเฉย ๆ (ไม่ต้อง cascade) - แสดงกลุ่มงานทั้งหมด จัดกลุ่มตามภารกิจให้หาง่ายขึ้น
+        ['manage-filter-dept', 'sa-filter-dept', 'disb-filter-dept', 'dl-filter-dept', 'es-filter-dept', 'pr-filter-dept']
+            .forEach(populateDeptFilterSelect);
+    }
+
+    function buildDeptOptgroupsHtml(selectedValue) {
+        let html = '';
+        ORG_STRUCTURE.missions.forEach(mission => {
+            html += `<optgroup label="${mission}">`;
+            (ORG_STRUCTURE.structure[mission] || []).forEach(dept => {
+                const sel = dept === selectedValue ? ' selected' : '';
+                html += `<option value="${dept}"${sel}>${dept}</option>`;
+            });
+            html += `</optgroup>`;
+        });
+        return html;
+    }
+
+    function populateDeptFilterSelect(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const current = el.value;
+        // เก็บตัวเลือกแรกที่เป็น "ทุกฝ่าย/กลุ่มงาน" (value ว่าง) ไว้เหมือนเดิม
+        const firstOption = el.querySelector('option[value=""]');
+        el.innerHTML = '';
+        if (firstOption) el.appendChild(firstOption);
+        el.insertAdjacentHTML('beforeend', buildDeptOptgroupsHtml(current));
+        if (current) el.value = current;
+    }
+
+    function setupMissionDeptCascade(missionSelectId, deptSelectId) {
+        const missionEl = document.getElementById(missionSelectId);
+        const deptEl = document.getElementById(deptSelectId);
+        if (!missionEl || !deptEl) return;
+
+        missionEl.innerHTML = '<option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>' +
+            ORG_STRUCTURE.missions.map(m => `<option value="${m}">${m}</option>`).join('');
+
+        if (!missionEl.dataset.cascadeBound) {
+            missionEl.dataset.cascadeBound = '1';
+            missionEl.addEventListener('change', () => {
+                populateDeptOptionsForMission(missionSelectId, deptSelectId);
+                deptEl.dispatchEvent(new Event('change')); // ให้ onchange เดิมของ dept select (เช่น โหลดยอดงบฝ่าย) ทำงานต่อ
+            });
+        }
+
+        deptEl.innerHTML = '<option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>';
+    }
+
+    function populateDeptOptionsForMission(missionSelectId, deptSelectId) {
+        const missionEl = document.getElementById(missionSelectId);
+        const deptEl = document.getElementById(deptSelectId);
+        const depts = ORG_STRUCTURE.structure[missionEl.value] || [];
+        deptEl.innerHTML = '<option value="" selected disabled>-- เลือกฝ่าย/กลุ่มงาน --</option>' +
+            depts.map(d => `<option value="${d}">${d}</option>`).join('');
+    }
+
+    /** หากลุ่มภารกิจที่มีกลุ่มงานนี้อยู่ (ใช้ตอนเปิดฟอร์มแก้ไข ซึ่งมีแค่ชื่อฝ่าย/กลุ่มงานเก็บไว้ ไม่มีภารกิจ) */
+    function findMissionForDept(deptName) {
+        return ORG_STRUCTURE.missions.find(m => (ORG_STRUCTURE.structure[m] || []).includes(deptName)) || '';
+    }
+
+    /** ตั้งค่า select คู่ (ภารกิจ+ฝ่าย/กลุ่มงาน) ให้ตรงกับค่าฝ่าย/กลุ่มงานที่มีอยู่แล้ว เช่น ตอนเปิดฟอร์มแก้ไขโครงการ */
+    function setDeptWithMission(missionSelectId, deptSelectId, deptValue) {
+        const missionEl = document.getElementById(missionSelectId);
+        if (!missionEl) return;
+        const mission = findMissionForDept(deptValue);
+        missionEl.value = mission;
+        populateDeptOptionsForMission(missionSelectId, deptSelectId);
+        const deptEl = document.getElementById(deptSelectId);
+        if (deptEl) deptEl.value = deptValue;
     }
 
     function formatCurrencyInput(input) {
@@ -1990,6 +2066,7 @@
         if (typeof google === 'undefined') return;
         google.script.run.withSuccessHandler(initData => {
             if (initData) {
+                if (initData.orgStructure) setupOrgStructure(initData.orgStructure);
                 if (initData.dashboard) renderDashboard(initData.dashboard);
                 if (initData.projects) {
                     allProjectsData = initData.projects;
@@ -3340,7 +3417,7 @@
     function openEditModal(rowJson) {
         const row = JSON.parse(decodeURIComponent(rowJson));
         document.getElementById('edit_timestamp').value = row[0];
-        document.getElementById('edit_department').value = row[1];
+        setDeptWithMission('edit_mission', 'edit_department', row[1]);
         document.getElementById('edit_project_name').value = row[2];
         document.getElementById('edit_budget').value = Number(row[3]).toLocaleString('en-US');
         document.getElementById('edit_responsible').value = row[4];
