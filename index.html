@@ -232,113 +232,6 @@
     .smart-pagination .pg-btn.active { background: var(--primary-gradient); color: #fff; border-color: transparent; box-shadow: 0 4px 10px rgba(14,124,123,0.3); }
     .smart-pagination .pg-btn.disabled { opacity: 0.4; cursor: not-allowed; }
     .smart-pagination .pg-ellipsis { border: none; background: none; cursor: default; color: #94a3b8; }
-
-    /* =====================================================================================
-       MUJI PALETTE OVERRIDE - โทนสีเรียบ ใช้สีน้อย พื้นครีมอุ่น หมึกเข้ม ไม่มีไล่สี/เงาหนัก
-       เขียนไว้เป็นบล็อกเดียวรวมท้ายสุดโดยตั้งใจ เพื่อให้เป็น "จุดเดียว" ที่ควบคุมโทนสีทั้งเว็บ
-       ถ้าต้องการปรับโทนสีอีกในอนาคต แก้ที่ตัวแปรกลุ่มนี้ที่เดียวพอ ไม่ต้องไล่แก้ทั้งไฟล์
-       ===================================================================================== */
-    :root, body.theme-hospital {
-        --primary-dark: #2b2926;
-        --primary-mid: #5c6b5d;
-        --primary-light: #7c8a7d;
-        --primary-accent: #5c6b5d;
-        --primary-gradient: #5c6b5d;
-        --sidebar-gradient: #2b2926;
-        --bg-light: #faf7f2;
-
-        --muji-ink: #2b2926;
-        --muji-muted: #8a8478;
-        --muji-border: #e5e0d8;
-        --muji-card: #fffdfa;
-        --muji-success: #6f7d5c;
-        --muji-danger: #a8574a;
-        --muji-warning: #b08d57;
-        --muji-info: #5f7c87;
-
-        --bs-primary: #5c6b5d;
-        --bs-success: #6f7d5c;
-        --bs-danger: #a8574a;
-        --bs-warning: #b08d57;
-        --bs-info: #5f7c87;
-        --bs-secondary: #8a8478;
-        --bs-light: #f3f0ea;
-        --bs-dark: #2b2926;
-        --bs-body-color: #2b2926;
-        --bs-border-color: #e5e0d8;
-    }
-
-    body.theme-hospital { color: var(--muji-ink); }
-
-    /* การ์ด: เส้นขอบบาง แทนเงาหนัก */
-    .card-dashboard, .table-responsive.bg-white, .progress-card, .p-3.bg-white.rounded.shadow-sm,
-    #loading-toast, .card.card-dashboard {
-        box-shadow: none !important;
-        border: 1px solid var(--muji-border) !important;
-    }
-    .card-dashboard:hover { box-shadow: 0 2px 10px rgba(43,41,38,0.06) !important; }
-    .card-stat-1, .card-stat-2, .card-stat-3 { background: var(--muji-card) !important; border-left: 3px solid var(--muji-ink) !important; }
-
-    /* ปุ่มสี Bootstrap มาตรฐาน -> โทนมิวจิ (ต้อง override ทั้ง base + hover เพราะ Bootstrap คอมไพล์ค่าสีตายตัวต่อคอมโพเนนต์) */
-    .btn-success { --bs-btn-bg: var(--muji-success); --bs-btn-border-color: var(--muji-success); --bs-btn-hover-bg: #5e6a4d; --bs-btn-hover-border-color: #5e6a4d; --bs-btn-active-bg: #5e6a4d; }
-    .btn-danger  { --bs-btn-bg: var(--muji-danger);  --bs-btn-border-color: var(--muji-danger);  --bs-btn-hover-bg: #90493e; --bs-btn-hover-border-color: #90493e; --bs-btn-active-bg: #90493e; }
-    .btn-warning { --bs-btn-bg: var(--muji-warning); --bs-btn-border-color: var(--muji-warning); --bs-btn-color: #fff; --bs-btn-hover-bg: #9a7947; --bs-btn-hover-border-color: #9a7947; --bs-btn-hover-color: #fff; --bs-btn-active-color: #fff; }
-    .btn-info    { --bs-btn-bg: var(--muji-info);    --bs-btn-border-color: var(--muji-info);    --bs-btn-color: #fff; --bs-btn-hover-bg: #4f6974; --bs-btn-hover-border-color: #4f6974; --bs-btn-hover-color: #fff; --bs-btn-active-color: #fff; }
-    .btn-primary { --bs-btn-bg: var(--primary-mid); --bs-btn-border-color: var(--primary-mid); --bs-btn-hover-bg: #4b5850; --bs-btn-hover-border-color: #4b5850; }
-    .btn-outline-primary { --bs-btn-color: var(--primary-mid); --bs-btn-border-color: var(--primary-mid); --bs-btn-hover-bg: var(--primary-mid); --bs-btn-hover-border-color: var(--primary-mid); }
-    .btn-outline-success { --bs-btn-color: var(--muji-success); --bs-btn-border-color: var(--muji-success); --bs-btn-hover-bg: var(--muji-success); --bs-btn-hover-border-color: var(--muji-success); }
-    .btn-outline-danger  { --bs-btn-color: var(--muji-danger);  --bs-btn-border-color: var(--muji-danger);  --bs-btn-hover-bg: var(--muji-danger);  --bs-btn-hover-border-color: var(--muji-danger); }
-    .btn-outline-secondary { --bs-btn-color: var(--muji-muted); --bs-btn-border-color: var(--muji-border); --bs-btn-hover-bg: var(--muji-ink); --bs-btn-hover-border-color: var(--muji-ink); }
-    .btn-warning.text-dark { color: #fff !important; }
-
-    /* พื้นหลัง/ตัวอักษรสี Bootstrap มาตรฐาน */
-    .bg-success { background-color: var(--muji-success) !important; }
-    .bg-danger { background-color: var(--muji-danger) !important; }
-    .bg-warning { background-color: var(--muji-warning) !important; color: #fff !important; }
-    .bg-info { background-color: var(--muji-info) !important; }
-    .bg-primary { background-color: var(--primary-mid) !important; }
-    .bg-dark { background-color: var(--muji-ink) !important; }
-    .text-success { color: var(--muji-success) !important; }
-    .text-danger { color: var(--muji-danger) !important; }
-    .text-warning { color: var(--muji-warning) !important; }
-    .text-info { color: var(--muji-info) !important; }
-    .text-primary { color: var(--primary-mid) !important; }
-    .border-success { border-color: var(--muji-success) !important; }
-    .border-danger { border-color: var(--muji-danger) !important; }
-    .border-warning { border-color: var(--muji-warning) !important; }
-    .border-info { border-color: var(--muji-info) !important; }
-    .border-primary { border-color: var(--primary-mid) !important; }
-    .alert-success { background-color: #f0f2ec !important; border-color: var(--muji-success) !important; color: #4d5741 !important; }
-    .alert-danger { background-color: #f7eeec !important; border-color: var(--muji-danger) !important; color: #7c3e33 !important; }
-    .alert-info { background-color: #eef3f4 !important; border-color: var(--muji-info) !important; color: #435960 !important; }
-    .progress-bar.bg-success { background-color: var(--muji-success) !important; }
-    .progress-bar.bg-danger { background-color: var(--muji-danger) !important; }
-    .progress-bar.bg-warning { background-color: var(--muji-warning) !important; }
-    .progress-bar.bg-info { background-color: var(--muji-info) !important; }
-    .progress-bar.bg-primary { background-color: var(--primary-mid) !important; }
-
-    /* ป้ายฝ่าย/สถานะที่เคยไล่สีรุ้ง -> โทนเดียวเรียบ ๆ (ใช้ตัวหนา/ตัวอักษรสร้างลำดับชั้นแทนสี) */
-    .badge-dept-medical, .badge-dept-budget, .badge-dept-personnel, .badge-dept-general {
-        background: var(--bs-light) !important; color: var(--muji-ink) !important; border: 1px solid var(--muji-border) !important;
-    }
-    .status-dot-pending { background-color: var(--muji-muted); }
-    .status-dot-running { background-color: var(--muji-info); }
-    .status-dot-completed { background-color: var(--muji-success); }
-    .status-dot-delayed { background-color: var(--muji-danger); }
-    .status-dot-canceled { background-color: var(--muji-ink); }
-
-    /* Sidebar/Login: เรียบเป็นพื้นทึบสีเดียว ไม่ไล่สี */
-    .sidebar { box-shadow: none !important; border-right: 1px solid rgba(255,255,255,0.06); }
-    .nav-btn.active { background: rgba(255,255,255,0.08) !important; border-left: 3px solid var(--muji-muted) !important; }
-    #login-overlay { background-color: var(--primary-dark) !important; }
-    .login-left { background: var(--primary-dark) !important; }
-    .circle-1, .circle-2, .circle-3 { background: rgba(255,255,255,0.04) !important; }
-    .login-btn { background: var(--primary-mid) !important; }
-    .login-btn:hover { background: #4b5850 !important; box-shadow: none !important; }
-    .login-wrapper { box-shadow: 0 4px 24px rgba(43,41,38,0.10) !important; }
-
-    table thead.table-light th, .table-light { background-color: var(--bs-light) !important; }
-    .shadow-sm, .shadow { box-shadow: none !important; border: 1px solid var(--muji-border); }
   </style>
 </head>
 <body class="theme-hospital">
@@ -371,7 +264,7 @@
         <div class="d-flex justify-content-center my-3">
           <!-- reCAPTCHA v2 ("ฉันไม่ใช่โปรแกรมอัตโนมัติ") - ต้องสมัคร Site Key ของหน่วยงานเองที่
                https://www.google.com/recaptcha/admin แล้วนำมาแทนที่ YOUR_RECAPTCHA_V2_SITE_KEY ด้านล่าง -->
-          <div class="g-recaptcha" data-sitekey="6Lc03q0tAAAAAKP37I5f0Et7sy14I_Nx5gt113ff"></div>
+          <div class="g-recaptcha" data-sitekey="6Lcz5K0tAAAAAO3ZAfoklosiZO9gZG-LkgL6Mkt9"></div>
         </div>
 
         <div class="d-flex justify-content-between align-items-center mb-4 mt-2">
@@ -425,8 +318,6 @@
         <button class="nav-btn menu-admin" id="menu-expense-summary" onclick="showSection('expense-summary', this)"><i class="fas fa-file-invoice-dollar"></i> สรุปยอดค่าใช้จ่าย</button>
         <button class="nav-btn" id="menu-print-report" onclick="showSection('print-report', this)"><i class="fas fa-print"></i> พิมพ์รายงานโครงการ</button>
         <button class="nav-btn menu-admin" id="menu-activity-log" onclick="showSection('activity-log', this)"><i class="fas fa-shield-alt"></i> ประวัติการใช้งานระบบ</button>
-        <button class="nav-btn menu-admin" id="menu-user-management" onclick="showSection('user-management', this)"><i class="fas fa-users-cog"></i> จัดการผู้ใช้งาน</button>
-        <button class="nav-btn menu-admin" id="menu-dept-management" onclick="showSection('dept-management', this)"><i class="fas fa-sitemap"></i> จัดการฝ่าย/กลุ่มงาน</button>
       </div>
     </div>
 
@@ -732,7 +623,9 @@
                       <select class="form-select form-select-sm shadow-sm border-0 fw-bold text-primary" id="manage-filter-year" onchange="renderManageTable()"></select>
                     </div>
                     <div class="col-md-3">
-                      <select class="dept-select form-select form-select-sm shadow-sm border-0" id="manage-filter-dept" onchange="renderManageTable()" data-dept-placeholder="all"></select>
+                      <select class="form-select form-select-sm shadow-sm border-0" id="manage-filter-dept" onchange="renderManageTable()">
+                        <option value="">ทุกฝ่าย/กลุ่มงาน</option>
+                      </select>
                     </div>
                     <div class="col-md-4">
                        <div class="input-group input-group-sm shadow-sm">
@@ -772,11 +665,19 @@
 
             <form id="form-project" onsubmit="handleProjectSubmit(event)">
               <div class="row g-4">
-                <div class="col-md-6">
-                  <label class="form-label fw-bold">ฝ่าย/กลุ่มงาน</label>
-                  <select class="dept-select form-select bg-light" name="department" id="add-department" required onchange="loadDeptBudgetAddProject()" data-dept-placeholder="choose"></select>
+                <div class="col-md-4">
+                  <label class="form-label fw-bold">กลุ่มภารกิจ</label>
+                  <select class="form-select bg-light" id="add-mission" required>
+                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
+                  </select>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
+                  <label class="form-label fw-bold">ฝ่าย/กลุ่มงาน</label>
+                  <select class="form-select bg-light" name="department" id="add-department" required onchange="loadDeptBudgetAddProject()">
+                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
                   <label class="form-label fw-bold">ปีงบประมาณ</label>
                   <select class="form-select bg-light" name="academic_year" id="add-academic-year" required onchange="loadDeptBudgetAddProject()"></select>
                 </div>
@@ -905,8 +806,16 @@
                         <select class="form-select bg-light" name="sub_year" id="sub_year" required onchange="loadProjectsForSubAct()"></select>
                       </div>
                       <div class="col-md-4">
+                        <label class="form-label fw-bold small text-muted">กลุ่มภารกิจ</label>
+                        <select class="form-select bg-light" id="sub_mission" required>
+                          <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
                         <label class="form-label fw-bold small text-muted">ฝ่าย/กลุ่มงาน</label>
-                        <select class="dept-select form-select bg-light" name="sub_dept" id="sub_dept" required onchange="loadProjectsForSubAct()" data-dept-placeholder="choose"></select>
+                        <select class="form-select bg-light" name="sub_dept" id="sub_dept" required onchange="loadProjectsForSubAct()">
+                          <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
+                        </select>
                       </div>
                       <div class="col-md-4">
                         <label class="form-label fw-bold small text-muted">ชื่อโครงการหลัก (เฉพาะที่อนุมัติแล้ว)</label>
@@ -994,7 +903,9 @@
                            <select class="form-select shadow-sm border-0 text-primary fw-bold" id="sa-filter-year" onchange="filterSubActTable()"></select>
                        </div>
                        <div class="col-md-3">
-                           <select class="dept-select form-select shadow-sm border-0" id="sa-filter-dept" onchange="filterSubActTable()" data-dept-placeholder="all"></select>
+                           <select class="form-select shadow-sm border-0" id="sa-filter-dept" onchange="filterSubActTable()">
+                               <option value="">ทุกฝ่าย/กลุ่มงาน</option>
+                           </select>
                        </div>
                        <div class="col-md-4">
                            <div class="input-group">
@@ -1065,8 +976,16 @@
                                 <select class="form-select bg-light" name="disb_year" id="disb_year" required onchange="loadProjectsForDisb()"></select>
                             </div>
                             <div class="col-md-6">
+                                <label class="form-label fw-bold small text-muted">กลุ่มภารกิจ</label>
+                                <select class="form-select bg-light" id="disb_mission" required>
+                                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
                                 <label class="form-label fw-bold small text-muted">ฝ่าย/กลุ่มงาน</label>
-                                <select class="dept-select form-select bg-light" name="disb_dept" id="disb_dept" required onchange="loadProjectsForDisb()" data-dept-placeholder="choose"></select>
+                                <select class="form-select bg-light" name="disb_dept" id="disb_dept" required onchange="loadProjectsForDisb()">
+                                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
+                                </select>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label fw-bold small text-muted">ชื่อโครงการหลัก (เฉพาะที่อนุมัติแล้ว)</label>
@@ -1130,7 +1049,9 @@
                            <select class="form-select shadow-sm border-0 text-primary fw-bold" id="disb-filter-year" onchange="filterDisbTable()"></select>
                        </div>
                        <div class="col-md-3">
-                           <select class="dept-select form-select shadow-sm border-0" id="disb-filter-dept" onchange="filterDisbTable()" data-dept-placeholder="all"></select>
+                           <select class="form-select shadow-sm border-0" id="disb-filter-dept" onchange="filterDisbTable()">
+                               <option value="">ทุกฝ่าย/กลุ่มงาน</option>
+                           </select>
                        </div>
                        <div class="col-md-4">
                            <div class="input-group">
@@ -1170,17 +1091,25 @@
 
             <form id="form-report" onsubmit="handleReportSubmit(event)">
                <div class="row g-4">
-                 <div class="col-md-4">
+                 <div class="col-md-3">
                    <label class="form-label fw-bold">ปีงบประมาณ</label>
                    <select class="form-select bg-light" name="rep_academic_year" id="rep-academic-year" required onchange="loadProjectNamesForReport()">
                      <option value="" disabled selected>-- เลือกปี --</option>
                    </select>
                  </div>
-                 <div class="col-md-4">
-                  <label class="form-label fw-bold">ฝ่าย/กลุ่มงาน</label>
-                  <select class="dept-select form-select bg-light" name="rep_department" id="rep-department" required onchange="loadProjectNamesForReport()" data-dept-placeholder="choose"></select>
+                 <div class="col-md-3">
+                  <label class="form-label fw-bold">กลุ่มภารกิจ</label>
+                  <select class="form-select bg-light" id="rep-mission" required>
+                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
+                  </select>
                  </div>
-                 <div class="col-md-4">
+                 <div class="col-md-3">
+                  <label class="form-label fw-bold">ฝ่าย/กลุ่มงาน</label>
+                  <select class="form-select bg-light" name="rep_department" id="rep-department" required onchange="loadProjectNamesForReport()">
+                    <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
+                  </select>
+                 </div>
+                 <div class="col-md-3">
                    <label class="form-label fw-bold">โครงการหลัก (เฉพาะที่อนุมัติแล้ว)</label>
                    <select class="form-select bg-light fw-bold text-primary" name="rep_project_name" id="rep_project_name_input" required disabled onchange="handleReportProjectChange()">
                         <option value="">-- เลือกโครงการ --</option>
@@ -1321,7 +1250,9 @@
                     <select class="form-select border-0 shadow-sm fw-bold text-primary" id="dl-filter-year" onchange="filterDownloadTable()"></select>
                 </div>
                 <div class="col-md-3">
-                    <select class="dept-select form-select border-0 shadow-sm" id="dl-filter-dept" onchange="filterDownloadTable()" data-dept-placeholder="all"></select>
+                    <select class="form-select border-0 shadow-sm" id="dl-filter-dept" onchange="filterDownloadTable()">
+                        <option value="">ทุกฝ่าย/กลุ่มงาน</option>
+                    </select>
                 </div>
                 <div class="col-md-3">
                     <div class="input-group shadow-sm">
@@ -1405,7 +1336,9 @@
                         <select class="form-select shadow-sm border-0 text-primary fw-bold" id="es-filter-year" onchange="filterExpenseSummary()"></select>
                     </div>
                     <div class="col-md-3">
-                        <select class="dept-select form-select shadow-sm border-0" id="es-filter-dept" onchange="filterExpenseSummary()" data-dept-placeholder="all"></select>
+                        <select class="form-select shadow-sm border-0" id="es-filter-dept" onchange="filterExpenseSummary()">
+                            <option value="">ทุกฝ่าย/กลุ่มงาน</option>
+                        </select>
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
@@ -1449,7 +1382,9 @@
                     </div>
                     <div class="col-md-3">
                         <label class="small fw-bold text-muted">ฝ่าย/กลุ่มงาน</label>
-                        <select class="dept-select form-select border-0 shadow-sm" id="pr-filter-dept" onchange="filterPrintReportTable()" data-dept-placeholder="all"></select>
+                        <select class="form-select border-0 shadow-sm" id="pr-filter-dept" onchange="filterPrintReportTable()">
+                            <option value="">ทุกฝ่าย/กลุ่มงาน</option>
+                        </select>
                     </div>
                     <div class="col-md-4">
                         <label class="small fw-bold text-muted">ค้นหาโครงการ</label>
@@ -1524,65 +1459,6 @@
             </div>
         </div>
 
-        <!-- USER MANAGEMENT (แอดมินเท่านั้น) -->
-        <div id="user-management" class="content-section">
-            <div class="card card-dashboard p-4 shadow-sm border-top border-4 border-dark">
-                <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom flex-wrap gap-3">
-                    <h4 class="m-0 text-dark fw-bold"><i class="fas fa-users-cog me-2 text-dark"></i>จัดการผู้ใช้งาน</h4>
-                    <div class="d-flex gap-2">
-                        <button class="btn btn-outline-secondary rounded-pill px-3 fw-bold shadow-sm" onclick="loadUsersList()"><i class="fas fa-sync-alt me-1"></i>รีเฟรช</button>
-                        <button class="btn btn-primary rounded-pill px-3 fw-bold shadow-sm" onclick="openUserModal()"><i class="fas fa-plus me-1"></i>เพิ่มผู้ใช้งาน</button>
-                    </div>
-                </div>
-                <p class="text-muted small mb-3"><i class="fas fa-info-circle me-1"></i>เพิ่ม/แก้ไข/ลบรหัส PIN และบทบาทผู้ใช้งานได้จากหน้านี้โดยตรง ไม่ต้องเปิดชีต Users อีกต่อไป (ระบบจะไม่ยอมให้ลบหรือปิดใช้งานแอดมินคนสุดท้ายในระบบ)</p>
-                <div class="table-responsive bg-white rounded border">
-                    <table class="table table-hover align-middle mb-0">
-                        <thead class="table-light">
-                            <tr>
-                                <th class="py-3 ps-3">ชื่อ/ป้ายกำกับ</th>
-                                <th class="py-3">รหัส PIN</th>
-                                <th class="py-3 text-center">บทบาท</th>
-                                <th class="py-3 text-center">สถานะ</th>
-                                <th class="text-center py-3" style="width: 160px;">จัดการ</th>
-                            </tr>
-                        </thead>
-                        <tbody id="user-management-body">
-                            <tr><td colspan="5" class="text-center py-5 text-muted"><div class="spinner-border text-secondary"></div><br>กำลังโหลดข้อมูล...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- DEPARTMENT MANAGEMENT (แอดมินเท่านั้น) -->
-        <div id="dept-management" class="content-section">
-            <div class="card card-dashboard p-4 shadow-sm border-top border-4 border-dark">
-                <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom flex-wrap gap-3">
-                    <h4 class="m-0 text-dark fw-bold"><i class="fas fa-sitemap me-2 text-dark"></i>จัดการฝ่าย/กลุ่มงาน</h4>
-                    <div class="d-flex gap-2">
-                        <button class="btn btn-outline-secondary rounded-pill px-3 fw-bold shadow-sm" onclick="loadDeptManagement()"><i class="fas fa-sync-alt me-1"></i>รีเฟรช</button>
-                        <button class="btn btn-primary rounded-pill px-3 fw-bold shadow-sm" onclick="openDeptModal()"><i class="fas fa-plus me-1"></i>เพิ่มฝ่าย/กลุ่มงาน</button>
-                    </div>
-                </div>
-                <p class="text-muted small mb-3"><i class="fas fa-info-circle me-1"></i>เพิ่ม/แก้ไข/ลบฝ่ายงาน พร้อมกำหนด "กลุ่มภารกิจ" ที่สังกัด (ใช้จัดกลุ่มการแสดงผลงบประมาณในหน้าแดชบอร์ด) เปลี่ยนที่นี่แล้วมีผลกับทุก dropdown ในเว็บทันที</p>
-                <div class="table-responsive bg-white rounded border">
-                    <table class="table table-hover align-middle mb-0">
-                        <thead class="table-light">
-                            <tr>
-                                <th class="py-3 ps-3">ฝ่าย/กลุ่มงาน</th>
-                                <th class="py-3">กลุ่มภารกิจ</th>
-                                <th class="py-3 text-center">สถานะ</th>
-                                <th class="text-center py-3" style="width: 160px;">จัดการ</th>
-                            </tr>
-                        </thead>
-                        <tbody id="dept-management-body">
-                            <tr><td colspan="4" class="text-center py-5 text-muted"><div class="spinner-border text-secondary"></div><br>กำลังโหลดข้อมูล...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
       </div>
       <footer class="footer text-center">
         <div class="container-fluid">
@@ -1605,11 +1481,19 @@
           <form id="form-edit-project" onsubmit="handleEditSubmit(event)">
               <input type="hidden" name="edit_timestamp" id="edit_timestamp">
               <div class="row g-3 bg-white p-3 rounded shadow-sm">
-                  <div class="col-md-6">
-                      <label class="form-label fw-bold small text-muted">ฝ่าย/กลุ่มงาน</label>
-                      <select class="dept-select form-select bg-light" name="edit_department" id="edit_department" required data-dept-placeholder="none"></select>
+                  <div class="col-md-4">
+                      <label class="form-label fw-bold small text-muted">กลุ่มภารกิจ</label>
+                      <select class="form-select bg-light" id="edit_mission" required>
+                          <option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>
+                      </select>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
+                      <label class="form-label fw-bold small text-muted">ฝ่าย/กลุ่มงาน</label>
+                      <select class="form-select bg-light" name="edit_department" id="edit_department" required>
+                          <option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>
+                      </select>
+                  </div>
+                  <div class="col-md-4">
                       <label class="form-label fw-bold small text-muted">ปีงบประมาณ</label>
                       <select class="form-select bg-light" name="edit_academic_year" id="edit_academic_year" required></select>
                   </div>
@@ -1671,89 +1555,6 @@
               <div class="modal-footer px-0 pb-0 mt-4 border-0 d-flex justify-content-between">
                   <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">ยกเลิก</button>
                   <button type="submit" class="btn btn-warning rounded-pill px-4 fw-bold shadow-sm">บันทึกการแก้ไข</button>
-              </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- USER MODAL (เพิ่ม/แก้ไขผู้ใช้งาน) -->
-  <div class="modal fade" id="userModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content border-0 shadow-lg">
-        <div class="modal-header bg-dark text-white border-0">
-          <h5 class="modal-title fw-bold" id="userModalTitle"><i class="fas fa-user-plus me-2"></i>เพิ่มผู้ใช้งาน</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body bg-light p-4">
-          <form id="form-user" onsubmit="handleUserSubmit(event)">
-              <input type="hidden" id="user_original_pin">
-              <div class="row g-3 bg-white p-3 rounded shadow-sm">
-                  <div class="col-12">
-                      <label class="form-label fw-bold small text-muted">ชื่อ/ป้ายกำกับ</label>
-                      <input type="text" class="form-control" id="user_label" placeholder="เช่น สมชาย ใจดี (ฝ่ายการเงิน)" required>
-                  </div>
-                  <div class="col-md-6">
-                      <label class="form-label fw-bold small text-muted">รหัส PIN</label>
-                      <input type="text" class="form-control" id="user_pin" placeholder="รหัสเข้าสู่ระบบ" required>
-                  </div>
-                  <div class="col-md-6">
-                      <label class="form-label fw-bold small text-muted">บทบาท</label>
-                      <select class="form-select" id="user_role" required>
-                          <option value="user">ผู้ใช้งาน</option>
-                          <option value="admin">แอดมิน (ผู้จัดการระบบ)</option>
-                      </select>
-                  </div>
-                  <div class="col-12">
-                      <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" id="user_active" checked>
-                          <label class="form-check-label fw-bold small text-muted" for="user_active">เปิดใช้งานบัญชีนี้</label>
-                      </div>
-                  </div>
-              </div>
-              <div class="modal-footer px-0 pb-0 mt-4 border-0 d-flex justify-content-between">
-                  <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">ยกเลิก</button>
-                  <button type="submit" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">บันทึก</button>
-              </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DEPARTMENT MODAL (เพิ่ม/แก้ไขฝ่าย/กลุ่มงาน) -->
-  <div class="modal fade" id="deptModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content border-0 shadow-lg">
-        <div class="modal-header bg-dark text-white border-0">
-          <h5 class="modal-title fw-bold" id="deptModalTitle"><i class="fas fa-sitemap me-2"></i>เพิ่มฝ่าย/กลุ่มงาน</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body bg-light p-4">
-          <form id="form-dept" onsubmit="handleDeptSubmit(event)">
-              <input type="hidden" id="dept_original_name">
-              <div class="row g-3 bg-white p-3 rounded shadow-sm">
-                  <div class="col-12">
-                      <label class="form-label fw-bold small text-muted">ชื่อฝ่าย/กลุ่มงาน</label>
-                      <input type="text" class="form-control" id="dept_name" placeholder="เช่น กลุ่มงานเภสัชกรรม" required>
-                  </div>
-                  <div class="col-12">
-                      <label class="form-label fw-bold small text-muted">กลุ่มภารกิจที่สังกัด</label>
-                      <input type="text" class="form-control" id="dept_mission_group" list="missionGroupList" placeholder="เช่น กลุ่มภารกิจด้านการพยาบาล">
-                      <datalist id="missionGroupList"></datalist>
-                      <div class="form-text">ใช้จัดกลุ่มการ์ดในหน้าแดชบอร์ด เว้นว่างได้ (จะไปอยู่ในกลุ่ม "ไม่ระบุกลุ่มภารกิจ")</div>
-                  </div>
-                  <div class="col-12">
-                      <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" id="dept_active" checked>
-                          <label class="form-check-label fw-bold small text-muted" for="dept_active">เปิดใช้งาน (แสดงใน dropdown)</label>
-                      </div>
-                  </div>
-              </div>
-              <div class="modal-footer px-0 pb-0 mt-4 border-0 d-flex justify-content-between">
-                  <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">ยกเลิก</button>
-                  <button type="submit" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">บันทึก</button>
               </div>
           </form>
         </div>
@@ -1904,6 +1705,95 @@
         });
     }
 
+    // ===================== โครงสร้างองค์กร (กลุ่มภารกิจ -> ฝ่าย/กลุ่มงาน) - ระบบกรองอัตโนมัติ ==================
+    // ให้ผู้ใช้เลือก "กลุ่มภารกิจ" ก่อน แล้วตัวเลือก "ฝ่าย/กลุ่มงาน" จะถูกกรองอัตโนมัติให้เหลือ
+    // เฉพาะกลุ่มงานที่อยู่ในภารกิจนั้น ช่วยลดรายการยาว ๆ ที่ต้องไล่หา และลดขั้นตอนการกรอกข้อมูล
+    let ORG_STRUCTURE = { missions: [], structure: {}, departments: [] };
+
+    function setupOrgStructure(org) {
+        if (!org || !org.missions) return;
+        ORG_STRUCTURE = org;
+
+        // คู่ select แบบ cascade (กลุ่มภารกิจ -> ฝ่าย/กลุ่มงาน) ในฟอร์มกรอกข้อมูล
+        setupMissionDeptCascade('add-mission', 'add-department');
+        setupMissionDeptCascade('rep-mission', 'rep-department');
+        setupMissionDeptCascade('edit_mission', 'edit_department');
+        setupMissionDeptCascade('sub_mission', 'sub_dept');
+        setupMissionDeptCascade('disb_mission', 'disb_dept');
+
+        // select แบบกรองตารางเฉย ๆ (ไม่ต้อง cascade) - แสดงกลุ่มงานทั้งหมด จัดกลุ่มตามภารกิจให้หาง่ายขึ้น
+        ['manage-filter-dept', 'sa-filter-dept', 'disb-filter-dept', 'dl-filter-dept', 'es-filter-dept', 'pr-filter-dept']
+            .forEach(populateDeptFilterSelect);
+    }
+
+    function buildDeptOptgroupsHtml(selectedValue) {
+        let html = '';
+        ORG_STRUCTURE.missions.forEach(mission => {
+            html += `<optgroup label="${mission}">`;
+            (ORG_STRUCTURE.structure[mission] || []).forEach(dept => {
+                const sel = dept === selectedValue ? ' selected' : '';
+                html += `<option value="${dept}"${sel}>${dept}</option>`;
+            });
+            html += `</optgroup>`;
+        });
+        return html;
+    }
+
+    function populateDeptFilterSelect(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const current = el.value;
+        // เก็บตัวเลือกแรกที่เป็น "ทุกฝ่าย/กลุ่มงาน" (value ว่าง) ไว้เหมือนเดิม
+        const firstOption = el.querySelector('option[value=""]');
+        el.innerHTML = '';
+        if (firstOption) el.appendChild(firstOption);
+        el.insertAdjacentHTML('beforeend', buildDeptOptgroupsHtml(current));
+        if (current) el.value = current;
+    }
+
+    function setupMissionDeptCascade(missionSelectId, deptSelectId) {
+        const missionEl = document.getElementById(missionSelectId);
+        const deptEl = document.getElementById(deptSelectId);
+        if (!missionEl || !deptEl) return;
+
+        missionEl.innerHTML = '<option value="" selected disabled>-- เลือกกลุ่มภารกิจ --</option>' +
+            ORG_STRUCTURE.missions.map(m => `<option value="${m}">${m}</option>`).join('');
+
+        if (!missionEl.dataset.cascadeBound) {
+            missionEl.dataset.cascadeBound = '1';
+            missionEl.addEventListener('change', () => {
+                populateDeptOptionsForMission(missionSelectId, deptSelectId);
+                deptEl.dispatchEvent(new Event('change')); // ให้ onchange เดิมของ dept select (เช่น โหลดยอดงบฝ่าย) ทำงานต่อ
+            });
+        }
+
+        deptEl.innerHTML = '<option value="" selected disabled>-- เลือกกลุ่มภารกิจก่อน --</option>';
+    }
+
+    function populateDeptOptionsForMission(missionSelectId, deptSelectId) {
+        const missionEl = document.getElementById(missionSelectId);
+        const deptEl = document.getElementById(deptSelectId);
+        const depts = ORG_STRUCTURE.structure[missionEl.value] || [];
+        deptEl.innerHTML = '<option value="" selected disabled>-- เลือกฝ่าย/กลุ่มงาน --</option>' +
+            depts.map(d => `<option value="${d}">${d}</option>`).join('');
+    }
+
+    /** หากลุ่มภารกิจที่มีกลุ่มงานนี้อยู่ (ใช้ตอนเปิดฟอร์มแก้ไข ซึ่งมีแค่ชื่อฝ่าย/กลุ่มงานเก็บไว้ ไม่มีภารกิจ) */
+    function findMissionForDept(deptName) {
+        return ORG_STRUCTURE.missions.find(m => (ORG_STRUCTURE.structure[m] || []).includes(deptName)) || '';
+    }
+
+    /** ตั้งค่า select คู่ (ภารกิจ+ฝ่าย/กลุ่มงาน) ให้ตรงกับค่าฝ่าย/กลุ่มงานที่มีอยู่แล้ว เช่น ตอนเปิดฟอร์มแก้ไขโครงการ */
+    function setDeptWithMission(missionSelectId, deptSelectId, deptValue) {
+        const missionEl = document.getElementById(missionSelectId);
+        if (!missionEl) return;
+        const mission = findMissionForDept(deptValue);
+        missionEl.value = mission;
+        populateDeptOptionsForMission(missionSelectId, deptSelectId);
+        const deptEl = document.getElementById(deptSelectId);
+        if (deptEl) deptEl.value = deptValue;
+    }
+
     function formatCurrencyInput(input) {
         let val = input.value.replace(/,/g, '');
         val = val.replace(/[^0-9]/g, '');
@@ -2008,32 +1898,11 @@
               populateYearSelects();
           }).getSettings();
 
-          google.script.run.withSuccessHandler(depts => {
-              allDepartmentsCache = depts || [];
-              populateDepartmentSelects();
-          }).getDepartments();
-
           tryRestoreSession(); // ถ้ามี session เดิมที่ยังไม่หมดอายุ จะข้ามหน้า login ไปเลย (รีเฟรชแล้วไม่ต้องล็อกอินใหม่)
       } else {
           populateYearSelects();
       }
     });
-
-    // ===== ฝ่าย/กลุ่มงาน: แหล่งข้อมูลเดียว มาจากชีต Departments เติมให้ทุก dropdown อัตโนมัติ =====
-    let allDepartmentsCache = [];
-
-    function populateDepartmentSelects() {
-        document.querySelectorAll('select.dept-select').forEach(sel => {
-            const currentVal = sel.value; // เผื่อเรียกซ้ำหลังโหลดข้อมูลใหม่ จะได้คงค่าที่เลือกไว้เดิม
-            const placeholderType = sel.getAttribute('data-dept-placeholder');
-            let html = '';
-            if (placeholderType === 'all') html = '<option value="">ทุกฝ่าย/กลุ่มงาน</option>';
-            else if (placeholderType === 'choose') html = '<option value="" selected disabled>-- เลือกฝ่าย/กลุ่มงาน --</option>';
-            allDepartmentsCache.forEach(d => { html += `<option value="${d.name}">${d.name}</option>`; });
-            sel.innerHTML = html;
-            if (currentVal && allDepartmentsCache.some(d => d.name === currentVal)) sel.value = currentVal;
-        });
-    }
 
     function checkEnter(e) { if(e.key === 'Enter') checkLogin(); }
 
@@ -2175,8 +2044,6 @@
             document.getElementById('menu-expense-summary').style.display = 'block';
             document.getElementById('menu-print-report').style.display = 'block';
             document.getElementById('menu-activity-log').style.display = 'block';
-            document.getElementById('menu-user-management').style.display = 'block';
-            document.getElementById('menu-dept-management').style.display = 'block';
 
             document.querySelectorAll('.role-admin').forEach(el => el.classList.remove('d-none'));
 
@@ -2184,7 +2051,7 @@
                 const sbtn = document.createElement('button');
                 sbtn.className = "nav-btn bg-warning text-dark mt-2 fw-bold";
                 sbtn.id = "menu-settings-btn";
-                sbtn.innerHTML = `<i class="fas fa-external-link-alt text-dark"></i> รายชื่อเจ้าหน้าที่ (สำหรับกรอกอัตโนมัติ)`;
+                sbtn.innerHTML = `<i class="fas fa-external-link-alt text-dark"></i> จัดการระบบ / เพิ่มชื่อเจ้าหน้าที่`;
                 // TODO: เปลี่ยนลิงก์ด้านล่างให้เป็น Google Sheet ฐานข้อมูลของโรงพยาบาลสันทรายเอง
                 sbtn.onclick = () => window.open('https://docs.google.com/spreadsheets/', '_blank');
                 document.getElementById('sidebar-menu').appendChild(sbtn);
@@ -2199,6 +2066,7 @@
         if (typeof google === 'undefined') return;
         google.script.run.withSuccessHandler(initData => {
             if (initData) {
+                if (initData.orgStructure) setupOrgStructure(initData.orgStructure);
                 if (initData.dashboard) renderDashboard(initData.dashboard);
                 if (initData.projects) {
                     allProjectsData = initData.projects;
@@ -2232,8 +2100,6 @@
       if (sectionId === 'print-report') loadPrintReportTable();
       if (sectionId === 'expense-summary') loadExpenseSummary();
       if (sectionId === 'activity-log') loadActivityLog();
-      if (sectionId === 'user-management') loadUsersList();
-      if (sectionId === 'dept-management') loadDeptManagement();
 
       if (window.innerWidth <= 768) document.getElementById('sidebar').classList.remove('show');
     }
@@ -2535,66 +2401,24 @@
       document.getElementById('system-budget').innerText = data.systemBudget.toLocaleString('en-US');
 
       const deptDiv = document.getElementById('dept-mini-stats');
-      if (!deptDiv) return;
-      deptDiv.innerHTML = '';
-
-      const groups = data.missionGroupStats || {};
-      const groupNames = Object.keys(groups);
-      if (groupNames.length === 0) {
-          deptDiv.innerHTML = '<div class="text-muted small">ยังไม่มีข้อมูลฝ่าย/กลุ่มงานในระบบ</div>';
-          return;
+      if (deptDiv) {
+        deptDiv.innerHTML = '';
+        for (const [dept, val] of Object.entries(data.statsCurrentYear)) {
+           const shortName = dept.replace('ฝ่ายบริหารงาน', '').replace('ฝ่ายบริหาร', '').replace('กลุ่มพัฒนา', '');
+           deptDiv.innerHTML += `
+             <div class="px-4 py-3 bg-white rounded shadow-sm border text-center flex-grow-1" style="min-width: 200px;">
+               <div class="fw-bold text-dark mb-2 fs-5">${shortName}</div>
+               <div class="badge bg-warning text-dark rounded-pill px-3 py-2 shadow-sm mb-2" style="font-size: 14px;">${val.count} โครงการ</div>
+               <div class="d-flex justify-content-between text-muted" style="font-size: 13px;">
+                  <span>งบจัดสรร: <strong class="text-primary">${val.alloc.toLocaleString()}</strong></span>
+                  <span>ใช้ไป: <strong class="text-danger">${val.budget.toLocaleString()}</strong></span>
+               </div>
+             </div>
+           `;
+        }
       }
-
-      deptDiv.className = 'w-100 d-flex flex-column gap-2';
-      groupNames.forEach((groupName, gi) => {
-          const g = groups[groupName];
-          const deptEntries = Object.entries(g.depts || {});
-          const groupId = 'mg-' + gi;
-          const usedPct = g.alloc > 0 ? Math.round((g.budget / g.alloc) * 100) : 0;
-
-          const wrapper = document.createElement('div');
-          wrapper.className = 'border rounded-3 overflow-hidden';
-          wrapper.innerHTML = `
-            <button type="button" class="w-100 d-flex justify-content-between align-items-center px-3 py-3 bg-white border-0 text-start" style="cursor:pointer;" onclick="toggleMissionGroup('${groupId}')">
-                <div class="d-flex align-items-center gap-2">
-                    <i class="fas fa-chevron-right mission-group-caret" id="caret-${groupId}" style="transition: transform 0.2s; font-size: 11px; color:#94a3b8;"></i>
-                    <span class="fw-bold text-dark">${groupName}</span>
-                    <span class="badge bg-light text-muted border rounded-pill">${deptEntries.length} ฝ่าย/กลุ่มงาน</span>
-                </div>
-                <div class="d-flex align-items-center gap-3 text-muted small">
-                    <span>${g.count} โครงการ</span>
-                    <span>งบจัดสรร <strong class="text-dark">${g.alloc.toLocaleString()}</strong></span>
-                    <span>ใช้ไป <strong class="text-dark">${g.budget.toLocaleString()}</strong> (${usedPct}%)</span>
-                </div>
-            </button>
-            <div class="d-none flex-wrap gap-2 p-3 bg-light border-top" id="body-${groupId}"></div>
-          `;
-          deptDiv.appendChild(wrapper);
-
-          const body = wrapper.querySelector(`#body-${groupId}`);
-          deptEntries.forEach(([deptName, val]) => {
-              body.innerHTML += `
-                <div class="px-3 py-2 bg-white rounded border flex-grow-1" style="min-width: 220px;">
-                  <div class="fw-bold text-dark small mb-1">${deptName}</div>
-                  <div class="d-flex justify-content-between text-muted" style="font-size: 12px;">
-                     <span>${val.count} โครงการ</span>
-                     <span>ใช้ไป <strong class="text-dark">${val.budget.toLocaleString()}</strong> / ${val.alloc.toLocaleString()}</span>
-                  </div>
-                </div>
-              `;
-          });
-      });
     }
 
-    function toggleMissionGroup(groupId) {
-        const body = document.getElementById('body-' + groupId);
-        const caret = document.getElementById('caret-' + groupId);
-        if (!body) return;
-        const isHidden = body.classList.contains('d-none');
-        body.classList.toggle('d-none');
-        body.classList.toggle('d-flex');
-        if (caret) caret.style.transform = isHidden ? 'rotate(90deg)' : 'rotate(0deg)';
-    }
     function handleProjectSubmit(e) {
       e.preventDefault();
       const form = document.getElementById('form-project');
@@ -3372,235 +3196,6 @@
         });
     }
 
-    // ================================================
-    // จัดการผู้ใช้งาน (User Management) - แอดมินเท่านั้น
-    // ================================================
-    let usersListData = [];
-    let userModalInstance = null;
-
-    function loadUsersList() {
-        const tbody = document.getElementById('user-management-body');
-        tbody.innerHTML = '<tr><td colspan="5" class="text-center py-5 text-muted"><div class="spinner-border text-secondary"></div><br>กำลังโหลดข้อมูล...</td></tr>';
-        google.script.run.withSuccessHandler(res => {
-            if (res.success) {
-                usersListData = res.users;
-                renderUsersList();
-            } else {
-                tbody.innerHTML = `<tr><td colspan="5" class="text-center py-4 text-danger">${res.message || 'ไม่สามารถโหลดข้อมูลได้'}</td></tr>`;
-            }
-        }).withFailureHandler(err => {
-            tbody.innerHTML = `<tr><td colspan="5" class="text-center py-4 text-danger">เกิดข้อผิดพลาดในการเชื่อมต่อ: ${err.message}</td></tr>`;
-        }).getUsersList(sessionToken);
-    }
-
-    function renderUsersList() {
-        const tbody = document.getElementById('user-management-body');
-        tbody.innerHTML = '';
-        if (usersListData.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="5" class="text-center py-4 text-muted">ยังไม่มีผู้ใช้งานในระบบ</td></tr>';
-            return;
-        }
-        usersListData.forEach(u => {
-            const roleBadge = u.role === 'admin'
-                ? '<span class="badge bg-dark rounded-pill px-3 py-2">แอดมิน</span>'
-                : '<span class="badge bg-secondary rounded-pill px-3 py-2">ผู้ใช้งาน</span>';
-            const statusBadge = u.active
-                ? '<span class="badge bg-success rounded-pill px-3 py-2">เปิดใช้งาน</span>'
-                : '<span class="badge bg-light text-muted border rounded-pill px-3 py-2">ปิดใช้งาน</span>';
-            const pinEsc = encodeURIComponent(u.pin);
-            tbody.innerHTML += `<tr>
-                <td class="ps-3 py-3">${personCellHtml(u.label || '-')}</td>
-                <td class="text-muted">••••${String(u.pin).slice(-2)}</td>
-                <td class="text-center">${roleBadge}</td>
-                <td class="text-center">${statusBadge}</td>
-                <td class="text-center">
-                    <button class="btn btn-sm btn-warning rounded-pill me-1 shadow-sm px-3" onclick="openUserModal('${pinEsc}')"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-sm btn-danger rounded-pill shadow-sm px-3" onclick="confirmDeleteUser('${pinEsc}')"><i class="fas fa-trash-alt"></i></button>
-                </td>
-            </tr>`;
-        });
-    }
-
-    function openUserModal(pinEsc) {
-        const form = document.getElementById('form-user');
-        form.reset();
-        if (pinEsc) {
-            const pin = decodeURIComponent(pinEsc);
-            const u = usersListData.find(x => x.pin === pin);
-            if (!u) return;
-            document.getElementById('userModalTitle').innerHTML = '<i class="fas fa-user-edit me-2"></i>แก้ไขผู้ใช้งาน';
-            document.getElementById('user_original_pin').value = u.pin;
-            document.getElementById('user_label').value = u.label || '';
-            document.getElementById('user_pin').value = u.pin;
-            document.getElementById('user_role').value = u.role;
-            document.getElementById('user_active').checked = u.active;
-        } else {
-            document.getElementById('userModalTitle').innerHTML = '<i class="fas fa-user-plus me-2"></i>เพิ่มผู้ใช้งาน';
-            document.getElementById('user_original_pin').value = '';
-            document.getElementById('user_active').checked = true;
-        }
-        userModalInstance = new bootstrap.Modal(document.getElementById('userModal'));
-        userModalInstance.show();
-    }
-
-    function handleUserSubmit(e) {
-        e.preventDefault();
-        const submitBtn = document.querySelector('#form-user button[type="submit"]');
-        const formData = {
-            originalPin: document.getElementById('user_original_pin').value,
-            pin: document.getElementById('user_pin').value.trim(),
-            role: document.getElementById('user_role').value,
-            label: document.getElementById('user_label').value.trim(),
-            active: document.getElementById('user_active').checked
-        };
-        setBtnPending(submitBtn, true);
-        google.script.run.withSuccessHandler(res => {
-            setBtnPending(submitBtn, false);
-            if (res.success) {
-                userModalInstance.hide();
-                Swal.fire({icon: 'success', title: 'สำเร็จ', text: res.message, confirmButtonColor: getPrimaryColor()});
-                loadUsersList();
-            } else Swal.fire('Error', res.message, 'error');
-        }).withFailureHandler(err => {
-            setBtnPending(submitBtn, false);
-            Swal.fire('Error', 'เกิดข้อผิดพลาดในการเชื่อมต่อ: ' + err.message, 'error');
-        }).saveUser(sessionToken, formData);
-    }
-
-    function confirmDeleteUser(pinEsc) {
-        const pin = decodeURIComponent(pinEsc);
-        Swal.fire({ title: 'ยืนยันการลบผู้ใช้งาน?', text: 'ผู้ใช้งานนี้จะไม่สามารถเข้าสู่ระบบด้วยรหัส PIN นี้ได้อีก', icon: 'warning', showCancelButton: true, confirmButtonColor: '#d33', confirmButtonText: 'ใช่, ลบเลย' }).then(r => {
-            if (r.isConfirmed) {
-                showLoading(true);
-                google.script.run.withSuccessHandler(res => {
-                    showLoading(false);
-                    if (res.success) { Swal.fire('สำเร็จ', res.message, 'success'); loadUsersList(); }
-                    else Swal.fire('Error', res.message, 'error');
-                }).withFailureHandler(err => {
-                    showLoading(false);
-                    Swal.fire('Error', 'เกิดข้อผิดพลาดในการเชื่อมต่อ: ' + err.message, 'error');
-                }).deleteUser(sessionToken, pin);
-            }
-        });
-    }
-
-    // ================================================
-    // จัดการฝ่าย/กลุ่มงาน (Department Management) - แอดมินเท่านั้น
-    // ================================================
-    let deptManagementData = [];
-    let deptModalInstance = null;
-
-    function loadDeptManagement() {
-        const tbody = document.getElementById('dept-management-body');
-        tbody.innerHTML = '<tr><td colspan="4" class="text-center py-5 text-muted"><div class="spinner-border text-secondary"></div><br>กำลังโหลดข้อมูล...</td></tr>';
-        google.script.run.withSuccessHandler(depts => {
-            deptManagementData = depts || [];
-            renderDeptManagement();
-        }).withFailureHandler(err => {
-            tbody.innerHTML = `<tr><td colspan="4" class="text-center py-4 text-danger">เกิดข้อผิดพลาดในการเชื่อมต่อ: ${err.message}</td></tr>`;
-        }).getDepartments();
-    }
-
-    function renderDeptManagement() {
-        const tbody = document.getElementById('dept-management-body');
-        tbody.innerHTML = '';
-        if (deptManagementData.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-muted">ยังไม่มีฝ่าย/กลุ่มงานในระบบ</td></tr>';
-            return;
-        }
-        deptManagementData.forEach(d => {
-            const nameEsc = encodeURIComponent(d.name);
-            tbody.innerHTML += `<tr>
-                <td class="ps-3 py-3 fw-bold text-dark">${d.name}</td>
-                <td class="text-muted">${d.missionGroup || '-'}</td>
-                <td class="text-center"><span class="badge bg-success rounded-pill px-3 py-2">เปิดใช้งาน</span></td>
-                <td class="text-center">
-                    <button class="btn btn-sm btn-warning rounded-pill me-1 shadow-sm px-3" onclick="openDeptModal('${nameEsc}')"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-sm btn-danger rounded-pill shadow-sm px-3" onclick="confirmDeleteDept('${nameEsc}')"><i class="fas fa-trash-alt"></i></button>
-                </td>
-            </tr>`;
-        });
-
-        // เติม datalist กลุ่มภารกิจ (เอาจากรายการที่มีอยู่แล้ว ให้พิมพ์ชื่อซ้ำง่ายๆ ไม่ต้องจำ)
-        const dl = document.getElementById('missionGroupList');
-        if (dl) {
-            const uniqueGroups = [...new Set(deptManagementData.map(d => d.missionGroup).filter(Boolean))];
-            dl.innerHTML = uniqueGroups.map(g => `<option value="${g}">`).join('');
-        }
-    }
-
-    function openDeptModal(nameEsc) {
-        const form = document.getElementById('form-dept');
-        form.reset();
-        if (nameEsc) {
-            const name = decodeURIComponent(nameEsc);
-            const d = deptManagementData.find(x => x.name === name);
-            if (!d) return;
-            document.getElementById('deptModalTitle').innerHTML = '<i class="fas fa-edit me-2"></i>แก้ไขฝ่าย/กลุ่มงาน';
-            document.getElementById('dept_original_name').value = d.name;
-            document.getElementById('dept_name').value = d.name;
-            document.getElementById('dept_mission_group').value = d.missionGroup || '';
-            document.getElementById('dept_active').checked = true;
-        } else {
-            document.getElementById('deptModalTitle').innerHTML = '<i class="fas fa-sitemap me-2"></i>เพิ่มฝ่าย/กลุ่มงาน';
-            document.getElementById('dept_original_name').value = '';
-            document.getElementById('dept_active').checked = true;
-        }
-        deptModalInstance = new bootstrap.Modal(document.getElementById('deptModal'));
-        deptModalInstance.show();
-    }
-
-    function handleDeptSubmit(e) {
-        e.preventDefault();
-        const submitBtn = document.querySelector('#form-dept button[type="submit"]');
-        const formData = {
-            originalName: document.getElementById('dept_original_name').value,
-            name: document.getElementById('dept_name').value.trim(),
-            missionGroup: document.getElementById('dept_mission_group').value.trim(),
-            active: document.getElementById('dept_active').checked
-        };
-        setBtnPending(submitBtn, true);
-        google.script.run.withSuccessHandler(res => {
-            setBtnPending(submitBtn, false);
-            if (res.success) {
-                deptModalInstance.hide();
-                Swal.fire({icon: 'success', title: 'สำเร็จ', text: res.message, confirmButtonColor: getPrimaryColor()});
-                loadDeptManagement();
-                // รีเฟรชรายชื่อฝ่ายในทุก dropdown ทั่วเว็บทันที
-                google.script.run.withSuccessHandler(depts => {
-                    allDepartmentsCache = depts || [];
-                    populateDepartmentSelects();
-                }).getDepartments();
-            } else Swal.fire('Error', res.message, 'error');
-        }).withFailureHandler(err => {
-            setBtnPending(submitBtn, false);
-            Swal.fire('Error', 'เกิดข้อผิดพลาดในการเชื่อมต่อ: ' + err.message, 'error');
-        }).saveDepartment(sessionToken, formData);
-    }
-
-    function confirmDeleteDept(nameEsc) {
-        const name = decodeURIComponent(nameEsc);
-        Swal.fire({ title: 'ยืนยันการลบฝ่าย/กลุ่มงาน?', text: 'โครงการเดิมที่เคยผูกกับฝ่ายนี้จะยังอยู่ในระบบ แต่จะไม่สามารถเลือกฝ่ายนี้สำหรับโครงการใหม่ได้อีก', icon: 'warning', showCancelButton: true, confirmButtonColor: '#d33', confirmButtonText: 'ใช่, ลบเลย' }).then(r => {
-            if (r.isConfirmed) {
-                showLoading(true);
-                google.script.run.withSuccessHandler(res => {
-                    showLoading(false);
-                    if (res.success) {
-                        Swal.fire('สำเร็จ', res.message, 'success');
-                        loadDeptManagement();
-                        google.script.run.withSuccessHandler(depts => {
-                            allDepartmentsCache = depts || [];
-                            populateDepartmentSelects();
-                        }).getDepartments();
-                    } else Swal.fire('Error', res.message, 'error');
-                }).withFailureHandler(err => {
-                    showLoading(false);
-                    Swal.fire('Error', 'เกิดข้อผิดพลาดในการเชื่อมต่อ: ' + err.message, 'error');
-                }).deleteDepartment(sessionToken, name);
-            }
-        });
-    }
-
     function toggleSubActs(projId) {
         const rows = document.querySelectorAll(`.sub-act-row-${projId}`);
         rows.forEach(r => r.classList.toggle('d-none'));
@@ -3822,7 +3417,7 @@
     function openEditModal(rowJson) {
         const row = JSON.parse(decodeURIComponent(rowJson));
         document.getElementById('edit_timestamp').value = row[0];
-        document.getElementById('edit_department').value = row[1];
+        setDeptWithMission('edit_mission', 'edit_department', row[1]);
         document.getElementById('edit_project_name').value = row[2];
         document.getElementById('edit_budget').value = Number(row[3]).toLocaleString('en-US');
         document.getElementById('edit_responsible').value = row[4];
